@@ -1,0 +1,19 @@
+install.sh
+  s_d4799a65ce3b7a::t_ee303a242cc35a 18-19,22-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "7e064a5009752c1a91e02e971bed4191c38d267e",
+  "prompts": {},
+  "sessions": {
+    "s_d4799a65ce3b7a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_043249f5cffeJZFr0oD4Ah4GIz",
+        "model": "claude-opus-4.8"
+      },
+      "human_author": "Rahil Shaikh <rahilrshk@gmail.com>"
+    }
+  }
+}
