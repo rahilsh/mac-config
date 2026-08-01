@@ -1,0 +1,13 @@
+[user]
+	name = Rahil Shaikh
+	email = you@example.com
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[alias]
+	stasha = stash --all
+[includeIf "gitdir:~/development/github/"]
+	path = ~/development/github/.gitconfig
