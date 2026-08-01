@@ -1,0 +1,19 @@
+.github/workflows/lint.yml
+  s_d4799a65ce3b7a::t_df5cd131577598 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "b802738b7d86281c7309542aef2ed38690914397",
+  "prompts": {},
+  "sessions": {
+    "s_d4799a65ce3b7a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_043249f5cffeJZFr0oD4Ah4GIz",
+        "model": "claude-opus-4.8"
+      },
+      "human_author": "Rahil Shaikh <rahilrshk@gmail.com>"
+    }
+  }
+}
