@@ -3,6 +3,9 @@
 # Run from the repo root. Homebrew is required:
 #   https://brew.sh
 
+# --- Terminal ---------------------------------------------------------------
+cask "alacritty"                # terminal emulator (see .config/alacritty)
+
 # --- Shell ------------------------------------------------------------------
 brew "zsh"
 brew "starship"                 # cross-shell prompt (see .config/starship.toml)

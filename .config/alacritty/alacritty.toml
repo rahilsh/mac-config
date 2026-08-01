@@ -1,0 +1,47 @@
+# ~/.config/alacritty/alacritty.toml
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 12, y = 12 }
+decorations = "Full"
+opacity = 0.95
+blur = true
+option_as_alt = "Both" # Allows 'Option' key to work as 'Alt' for terminal shortcuts
+
+[scrolling]
+history = 10000
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "Menlo" # Default macOS monospace font
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[keyboard]
+bindings = [
+    # --- Text Navigation Shortcuts (Line jumping & Word skipping) ---
+    { key = "Left", mods = "Command", chars = "\u0001" },  # Jumps to start of line (Ctrl + A)
+    { key = "Right", mods = "Command", chars = "\u0005" }, # Jumps to end of line (Ctrl + E)
+    { key = "Left", mods = "Alt", chars = "\u001Bb" },     # Skips one full word backward
+    { key = "Right", mods = "Alt", chars = "\u001Bf" },    # Skips one full word forward
+
+    # --- Seamless Tmux Splitting (Updated to use your new Ctrl+a prefix) ---
+    { key = "D", mods = "Command", chars = "\u0001%" },         # Split Vertically (Ctrl+a then %)
+    { key = "D", mods = "Command|Shift", chars = "\u0001\"" },   # Split Horizontally (Ctrl+a then ")
+
+    # --- Close Split Pane (Updated to use Ctrl+a) ---
+    #{ key = "W", mods = "Command", chars = "\u0001x" },          # Closes pane (Ctrl+a then x)
+
+    # --- iTerm2-style Search Trigger ---
+    { key = "F", mods = "Command", mode = "~Search", action = "SearchForward" },
+
+    # --- Search Bar Line & Word Manipulations (iTerm2-like) ---
+    { key = "Back", mods = "Command", mode = "Search", action = "SearchClear" },      # Clear bar with Cmd + Backspace
+    { key = "Back", mods = "Option", mode = "Search", action = "SearchDeleteWord" }, # Delete word with Opt + Backspace
+    { key = "Left", mods = "Option", mode = "Search", action = "SearchDeleteWord" }  # Fallback word-delete for Opt + Left
+]

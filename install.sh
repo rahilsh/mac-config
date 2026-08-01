@@ -16,6 +16,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FILES=(
   ".zshrc:.zshrc"
   ".config/starship.toml:.config/starship.toml"
+  ".config/alacritty/alacritty.toml:.config/alacritty/alacritty.toml"
 )
 
 log() { printf '\033[1;32m==>\033[0m %s\n' "$1"; }

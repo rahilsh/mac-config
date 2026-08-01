@@ -9,12 +9,14 @@ Zsh + Oh My Zsh + Starship setup for Apple Silicon Macs.
 | --- | --- |
 | `.zshrc` | Zsh configuration: Oh My Zsh, plugins, history, aliases, and lazy-loaded tool setup. |
 | `.config/starship.toml` | [Starship](https://starship.rs) prompt configuration. |
+| `.config/alacritty/alacritty.toml` | [Alacritty](https://alacritty.org) terminal configuration. |
 | `Brewfile` | Homebrew dependencies (`brew bundle`). |
 | `install.sh` | Symlinks the dotfiles into `$HOME` (with backups). |
 
 ## Features
 
 - **Shell**: [Zsh](https://www.zsh.org) with [Oh My Zsh](https://ohmyz.sh) (`robbyrussell` theme).
+- **Terminal**: [Alacritty](https://alacritty.org) with iTerm2-style keybindings and tmux split shortcuts.
 - **Prompt**: [Starship](https://starship.rs).
 - **Plugins**: `git`, `brew`, `docker`, [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting), [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions).
 - **Fuzzy finding**: [`fzf`](https://github.com/junegunn/fzf) key bindings and completion.
