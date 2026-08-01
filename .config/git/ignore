@@ -1,0 +1,11 @@
+# Global git ignore — applied to all repositories via core.excludesfile.
+
+# macOS
+.DS_Store
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Claude Code local settings
+**/.claude/settings.local.json
