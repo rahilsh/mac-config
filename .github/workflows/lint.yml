@@ -10,7 +10,7 @@ jobs:
     name: ShellCheck (bash scripts)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
@@ -24,7 +24,7 @@ jobs:
     name: Zsh syntax check (.zshrc)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install zsh
         run: sudo apt-get update && sudo apt-get install -y zsh
       - name: Check .zshrc syntax
