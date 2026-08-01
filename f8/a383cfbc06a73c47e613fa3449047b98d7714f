@@ -1,0 +1,26 @@
+.config/alacritty/alacritty.toml
+  s_d4799a65ce3b7a::t_6f6d3c0bd80f89 1-47
+install.sh
+  s_d4799a65ce3b7a::t_a9a71d96b78b11 19
+Brewfile
+  s_d4799a65ce3b7a::t_f9d96bfc267a16 6-8
+README.md
+  s_d4799a65ce3b7a::t_7c610418435031 19
+  s_d4799a65ce3b7a::t_3428abd51a795f 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "f8a383cfbc06a73c47e613fa3449047b98d7714f",
+  "prompts": {},
+  "sessions": {
+    "s_d4799a65ce3b7a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_043249f5cffeJZFr0oD4Ah4GIz",
+        "model": "claude-opus-4.8"
+      },
+      "human_author": "Rahil Shaikh <rahilrshk@gmail.com>"
+    }
+  }
+}
