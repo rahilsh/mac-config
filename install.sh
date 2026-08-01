@@ -15,8 +15,12 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Map of "source (relative to repo)" -> "destination (relative to $HOME)".
 FILES=(
   ".zshrc:.zshrc"
+  ".tmux.conf:.tmux.conf"
+  ".gitconfig:.gitconfig"
   ".config/starship.toml:.config/starship.toml"
   ".config/alacritty/alacritty.toml:.config/alacritty/alacritty.toml"
+  ".config/zed/settings.json:.config/zed/settings.json"
+  ".config/git/ignore:.config/git/ignore"
 )
 
 log() { printf '\033[1;32m==>\033[0m %s\n' "$1"; }
