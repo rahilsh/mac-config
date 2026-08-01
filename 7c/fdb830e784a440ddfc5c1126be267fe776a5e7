@@ -1,0 +1,19 @@
+.tmux.conf
+  s_d4799a65ce3b7a::t_dbaf83fc6faf77 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "7cfdb830e784a440ddfc5c1126be267fe776a5e7",
+  "prompts": {},
+  "sessions": {
+    "s_d4799a65ce3b7a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_043249f5cffeJZFr0oD4Ah4GIz",
+        "model": "claude-opus-4.8"
+      },
+      "human_author": "Rahil Shaikh <rahilrshk@gmail.com>"
+    }
+  }
+}
