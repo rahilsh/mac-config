@@ -9,7 +9,7 @@ plugins=(git brew docker zsh-autosuggestions zsh-syntax-highlighting)
 # and shaves the completion-init cost off every startup.
 ZSH_DISABLE_COMPFIX="true"
 
-source $ZSH/oh-my-zsh.sh
+[[ -r "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -30,13 +30,13 @@ _cache_cmd() {
   cat "$cache"
 }
 
-source <(_cache_cmd fzf-init fzf --zsh)
+command -v fzf >/dev/null && source <(_cache_cmd fzf-init fzf --zsh)
 
 alias vi="nvim"
 alias vim="nvim"
 
 gitr() { find -H . -name .git -type d -execdir pwd \; -execdir git "$@" \; -exec printf "\n" \; }
-export PATH="$PATH:$(_cache_cmd gopath go env GOPATH)/bin"
+command -v go >/dev/null && export PATH="$PATH:$(_cache_cmd gopath go env GOPATH)/bin"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -53,25 +53,32 @@ brew() {
   command brew "$@"
 }
 
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-export JAVA_HOME="$(_cache_cmd javahome-21 /usr/libexec/java_home -v 21)"
-export PATH="$(_cache_cmd npm-prefix npm config get prefix)/bin:$PATH"
+# OpenJDK 21 (Homebrew)
+if [[ -d "/opt/homebrew/opt/openjdk@21/bin" ]]; then
+  export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+  export JAVA_HOME="$(_cache_cmd javahome-21 /usr/libexec/java_home -v 21)"
+fi
+
+command -v npm >/dev/null && export PATH="$(_cache_cmd npm-prefix npm config get prefix)/bin:$PATH"
 
 # rbenv: put shims on PATH directly (instant) so ruby/gem work; defer the
 # heavier `rbenv init` shell integration until rbenv is actually invoked.
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-rbenv() {
-  unset -f rbenv
-  eval "$(command rbenv init - zsh)"
-  rbenv "$@"
-}
+if [[ -d "$HOME/.rbenv" ]]; then
+  export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+  rbenv() {
+    unset -f rbenv
+    eval "$(command rbenv init - zsh)"
+    rbenv "$@"
+  }
+fi
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.lmstudio/bin"
-# End of LM Studio CLI section
+# LM Studio CLI (lms)
+[[ -d "$HOME/.lmstudio/bin" ]] && export PATH="$PATH:$HOME/.lmstudio/bin"
 
-. "$HOME/.local/bin/env"
+[[ -r "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
-# Added by git-ai installer
-export NODE_USE_SYSTEM_CA=1
-export PATH="$HOME/.git-ai/bin:$PATH"
+# git-ai
+if [[ -d "$HOME/.git-ai/bin" ]]; then
+  export NODE_USE_SYSTEM_CA=1
+  export PATH="$HOME/.git-ai/bin:$PATH"
+fi
