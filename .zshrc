@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git brew docker zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git brew docker)
 
 # Skip compinit's insecure-directory audit (compaudit); safe on a single-user Mac
 # and shaves the completion-init cost off every startup.
@@ -82,3 +82,12 @@ if [[ -d "$HOME/.git-ai/bin" ]]; then
   export NODE_USE_SYSTEM_CA=1
   export PATH="$HOME/.git-ai/bin:$PATH"
 fi
+
+# Homebrew-managed zsh plugins. Sourced here rather than via Oh My Zsh's
+# plugins=(...) array, which only discovers plugins under $ZSH_CUSTOM/plugins.
+# zsh-syntax-highlighting must be sourced last.
+HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}"
+[[ -r "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] \
+  && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[[ -r "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
+  && source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
