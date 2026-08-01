@@ -8,8 +8,12 @@ Zsh + Oh My Zsh + Starship setup for Apple Silicon Macs.
 | Path | Description |
 | --- | --- |
 | `.zshrc` | Zsh configuration: Oh My Zsh, plugins, history, aliases, and lazy-loaded tool setup. |
+| `.tmux.conf` | [tmux](https://github.com/tmux/tmux) configuration (`C-a` prefix, mouse, status line). |
+| `.gitconfig` | Global Git configuration (aliases, url rewrite, conditional includes). |
 | `.config/starship.toml` | [Starship](https://starship.rs) prompt configuration. |
 | `.config/alacritty/alacritty.toml` | [Alacritty](https://alacritty.org) terminal configuration. |
+| `.config/zed/settings.json` | [Zed](https://zed.dev) editor settings. |
+| `.config/git/ignore` | Global Git ignore rules. |
 | `Brewfile` | Homebrew dependencies (`brew bundle`). |
 | `install.sh` | Symlinks the dotfiles into `$HOME` (with backups). |
 
@@ -20,7 +24,8 @@ Zsh + Oh My Zsh + Starship setup for Apple Silicon Macs.
 - **Prompt**: [Starship](https://starship.rs).
 - **Plugins**: `git`, `brew`, `docker`, [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting), [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions).
 - **Fuzzy finding**: [`fzf`](https://github.com/junegunn/fzf) key bindings and completion.
-- **Editor**: `vi`/`vim` aliased to [Neovim](https://neovim.io).
+- **Editor**: `vi`/`vim` aliased to [Neovim](https://neovim.io); [Zed](https://zed.dev) settings included.
+- **Multiplexer**: [tmux](https://github.com/tmux/tmux) with a `C-a` prefix matching the Alacritty split bindings.
 - **Languages / managers**: Go, Node (npm), [pnpm](https://pnpm.io), [rbenv](https://github.com/rbenv/rbenv), OpenJDK 21.
 
 ### Startup performance
@@ -52,6 +57,9 @@ exec zsh
 
 Run `./install.sh` without `--brew` to only symlink the dotfiles, or
 `brew bundle` on its own to just install the Homebrew dependencies.
+
+> **Note:** `.gitconfig` ships with a placeholder `user.email` — update it
+> to your own before committing anything.
 
 ### Manual dependencies
 
