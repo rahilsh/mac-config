@@ -16,6 +16,7 @@ jobs:
         with:
           scandir: "."
           additional_files: "install.sh"
+          ignore_names: ".zshrc"
         env:
           SHELLCHECK_OPTS: -e SC1090 -e SC1091
 
