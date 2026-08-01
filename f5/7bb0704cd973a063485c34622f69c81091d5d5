@@ -1,0 +1,20 @@
+.zshrc
+  s_d4799a65ce3b7a::t_7e14bf7d4c157e 6
+  s_d4799a65ce3b7a::t_3b9602d05fd057 85-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "f57bb0704cd973a063485c34622f69c81091d5d5",
+  "prompts": {},
+  "sessions": {
+    "s_d4799a65ce3b7a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_043249f5cffeJZFr0oD4Ah4GIz",
+        "model": "claude-opus-4.8"
+      },
+      "human_author": "Rahil Shaikh <rahilrshk@gmail.com>"
+    }
+  }
+}
